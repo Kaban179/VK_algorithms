@@ -22,13 +22,17 @@ from Hometask_2.tests.list_node import ListNode, list_values, make_list
     ],
 )
 def test_merge_two_sorted_lists(first, second, expected):
-    solution = import_module("Hometask_2.№8").Solution()
+    module = import_module("Hometask_2.№8")
+    module.ListNode = ListNode
+    solution = module.Solution()
     result = solution.mergeTwoLists(make_list(first), make_list(second))
     assert list_values(result) == expected
 
 
 def test_merge_reuses_existing_nodes():
-    solution = import_module("Hometask_2.№8").Solution()
+    module = import_module("Hometask_2.№8")
+    module.ListNode = ListNode
+    solution = module.Solution()
     first = make_list([1, 3])
     second = make_list([2, 4])
     original_nodes = []

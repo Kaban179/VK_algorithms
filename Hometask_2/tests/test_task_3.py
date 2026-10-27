@@ -2,7 +2,7 @@ from importlib import import_module
 
 import pytest
 
-from Hometask_2.tests.list_node import list_values, make_list
+from Hometask_2.tests.list_node import ListNode, list_values, make_list
 
 
 @pytest.mark.parametrize(
@@ -21,6 +21,8 @@ from Hometask_2.tests.list_node import list_values, make_list
     ],
 )
 def test_remove_elements(values, target, expected):
-    solution = import_module("Hometask_2.№3").Solution()
+    module = import_module("Hometask_2.№3")
+    module.ListNode = ListNode
+    solution = module.Solution()
     result = solution.removeElements(make_list(values), target)
     assert list_values(result) == expected
