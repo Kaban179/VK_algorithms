@@ -4,6 +4,7 @@ from typing import Optional
 
 class Solution:
     def middleNode(self, head: ListNode | None) -> ListNode | None:
+        #Используем метод двух указателей. Когда быстрый указатель выйдет за границу списка, медленный будет как раз на середине списка
         slow = head
         fast = head
 
