@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # Сохраняем обработанные элементы в хэштаблице. Обращение к ней за О(1), соответсвенно удается обойтись одним циклом
