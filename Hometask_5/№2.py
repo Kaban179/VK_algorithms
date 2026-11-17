@@ -29,3 +29,6 @@ class Solution:
 
         tail.next = None
         return dummy.next
+
+# Время: O(N log K), где N — общее число элементов, K — число массивов.
+# Память: O(K) для кучи, O(N) для результата.
