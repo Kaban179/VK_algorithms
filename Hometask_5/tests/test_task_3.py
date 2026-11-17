@@ -1,4 +1,6 @@
-from importlib import import_module
+from pathlib import Path
+from runpy import run_path
+from typing import List
 import pytest
 
 @pytest.mark.parametrize(("nums", "k", "smallest", "largest"), [
@@ -16,6 +18,6 @@ import pytest
     ([100,-100,50,0], 3, 50, 0),
 ])
 def test_kth_order_statistics_in_array(nums, k, smallest, largest):
-    solution = import_module("Hometask_5.№3").Solution()
+    solution = run_path(str(Path(__file__).resolve().parents[1] / "№3.py"), init_globals={"List": List})["Solution"]()
     assert solution.findKthSmallest(nums[:], k) == smallest
     assert solution.findKthLargest(nums[:], k) == largest

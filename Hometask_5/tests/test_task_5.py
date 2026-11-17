@@ -40,5 +40,5 @@ def factors(root):
 ])
 def test_balance_factor_is_written_for_each_node(items, expected):
     root = make_tree(items)
-    import_module("Hometask_5.№5").Solution().calculateBalanceFactors(root)
+    import_module("Hometask_5.№5").Solution().fillBalanceFactors(root)
     assert factors(root) == expected
